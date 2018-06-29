@@ -196,7 +196,7 @@ classdef KL
             [s,r] = mlbash(['fslstats ' pnii.fileprefix '.nii.gz -e']);
             if (~s); E = str2num(r); %#ok<ST2NM>
             else     E = nan; end
-            delete([pnii.fileprefix mlfourd.INIfTI.FILETYPE_EXT]);
+            delete([pnii.fileprefix mlfourd.NIfTId.FILETYPE_EXT]);
         end        
         function E  = dipentropy(this, p)
             
