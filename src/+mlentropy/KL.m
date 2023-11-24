@@ -193,7 +193,7 @@ classdef KL
             p    = imcast(p, 'double');
             pnii = mlfourd.NIfTI(p, ['fslS_' mydatetimestr(now)], 'for KL.fslS');
             pnii.save;
-            [s,r] = mlbash(['fslstats ' pnii.fileprefix '.nii.gz -e']);
+            [s,r] = mlbash(strcat('fslstats ', pnii.fileprefix, '.nii.gz -e'));
             if (~s); E = str2num(r); %#ok<ST2NM>
             else     E = nan; end
             delete([pnii.fileprefix mlfourd.NIfTId.FILETYPE_EXT]);
